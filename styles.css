@@ -13,6 +13,13 @@ body {
     max-width: 850px;
     margin: 0 auto;
     overflow-x: hidden;
+    padding: 0 10px;
+}
+
+/* Responsive images by default */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Header Styles */
@@ -22,7 +29,15 @@ body {
     padding: 0;
 }
 .top {
-	width: 850px;
+	width: 100%;
+	max-width: 850px;
+}
+
+.top img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
 }
 
 .logo h1 {
@@ -133,8 +148,10 @@ body {
 .product-item img {
     width: 100%;
     max-width: 250px;
+    height: auto;
     object-fit: cover;
     margin-bottom: 10px;
+    display: block;
 }
 
 .product-info {
@@ -153,6 +170,10 @@ body {
     margin-bottom: 5px;
     font-weight: 500;
 	text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
 }
 .product-name a:hover{
     font-size: 1.0em;
@@ -160,6 +181,23 @@ body {
     margin-bottom: 5px;
     font-weight: 500;
 	text-decoration:underline;
+    background-color: #f5f5f5;
+}
+
+/* Touch-friendly button styles */
+.product-name a {
+    min-height: 44px;
+    padding: 8px 12px;
+    touch-action: manipulation;
+}
+
+.lip-item a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    touch-action: manipulation;
 }
 .brand-name {
 	font-size: 1em;
@@ -208,8 +246,9 @@ body {
 
 .cooling-products img {
     max-width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
+    display: block;
 }
 
 /* Lip Tattoo Section */
@@ -242,7 +281,9 @@ body {
 }
 
 .model-section img {
-    width: 770px;
+    width: 100%;
+    max-width: 770px;
+    height: auto;
     object-fit: cover;
 }
 
@@ -440,32 +481,209 @@ body {
 }
 
 /* Responsive Design */
+
+/* Mobile phones (320px - 480px) */
 @media (max-width: 480px) {
+    body {
+        padding: 0 5px;
+        max-width: 100%;
+        line-height: 1.7;
+        font-size: 16px;
+    }
+    
+    .bundle-offer {
+        padding: 20px 15px;
+    }
+    
+    .bundle-offer h3 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+    }
+    
     .product-row {
         flex-direction: column;
         gap: 15px;
     }
     
+    .product-item {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .product-item img {
+        max-width: 200px;
+        width: 80%;
+    }
+    
+    .product-name {
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+    
+    .product-name a {
+        font-size: 0.95em;
+        line-height: 1.5;
+        padding: 10px 8px;
+    }
+    
+    .brand-name {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+    
+    .price, .discount {
+        font-size: 0.95em;
+        margin-top: 5px;
+    }
+    
     .lip-tattoo-content,
     .vitamin-content {
         flex-direction: column;
+        padding: 15px 10px;
+    }
+    
+    .lip-tattoo {
+        padding: 25px 10px;
+    }
+    
+    .vitamin-c {
+        padding: 25px 15px;
+    }
+    
+    .red-ginseng, .vt {
+        padding: 25px 15px;
+    }
+    
+    .lip-products {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .lip-item img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .lip-item p {
+        font-size: 0.85em;
+        max-width: 180px;
     }
     
     .hero-text h2 {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     
     .logo h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
     
     .section-header h3,
     .vitamin-header h3 {
-        font-size: 1.5em;
+        font-size: 1.3em;
+    }
+    
+    .ginseng-header h3 {
+        font-size: 1.3em;
+    }
+    
+    .footer {
+        padding: 20px 15px;
     }
 }
 
-@media (min-width: 481px) {
+/* Large mobile phones and small tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
+    
+    .bundle-offer {
+        padding: 25px 20px;
+    }
+    
+    .product-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .product-item {
+        flex: 1;
+        min-width: 200px;
+        max-width: 300px;
+    }
+    
+    .product-item img {
+        max-width: 220px;
+    }
+    
+    .lip-products {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .lip-item img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .vitamin-c {
+        padding: 30px 20px;
+    }
+    
+    .red-ginseng, .vt {
+        padding: 30px 20px;
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        padding: 0 20px;
+        max-width: 100%;
+    }
+    
+    .bundle-offer {
+        padding: 35px 30px;
+    }
+    
+    .product-row {
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .product-item {
+        flex: 1;
+        min-width: 220px;
+    }
+    
+    .product-item img {
+        max-width: 240px;
+    }
+    
+    .lip-products {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .lip-item img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .vitamin-c {
+        padding: 35px 30px;
+    }
+    
+    .red-ginseng, .vt {
+        padding: 35px 30px;
+    }
+}
+
+/* Desktop and larger screens (1025px+) */
+@media (min-width: 1025px) {
     .product-row {
         flex-direction: row;
     }
