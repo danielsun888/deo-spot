@@ -148,10 +148,10 @@ img {
 .product-item img {
     width: 100%;
     max-width: 250px;
-    height: auto;
     object-fit: cover;
     margin-bottom: 10px;
     display: block;
+	margin: auto
 }
 
 .product-info {
@@ -170,10 +170,6 @@ img {
     margin-bottom: 5px;
     font-weight: 500;
 	text-decoration: none;
-    padding: 5px;
-    display: inline-block;
-    border-radius: 3px;
-    transition: background-color 0.2s ease;
 }
 .product-name a:hover{
     font-size: 1.0em;
@@ -181,13 +177,11 @@ img {
     margin-bottom: 5px;
     font-weight: 500;
 	text-decoration:underline;
-    background-color: #f5f5f5;
 }
 
 /* Touch-friendly button styles */
 .product-name a {
     min-height: 44px;
-    padding: 8px 12px;
     touch-action: manipulation;
 }
 
@@ -200,9 +194,11 @@ img {
     touch-action: manipulation;
 }
 .brand-name {
-	font-size: 1em;
+	font-size: 0.8em;
     color: #999;
     font-weight: 600;
+	padding-top: 10px;
+	padding-bottom: 5px;
 }
 
 .discount {
@@ -299,9 +295,10 @@ img {
     text-align: center;
 }
 
+
 .lip-item img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    max-width: 240px;
     border-radius: 50%;
     margin-bottom: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -309,9 +306,19 @@ img {
 
 .lip-item p{
     font-size: 0.9em;
-    color: #ed2124; 
+    color: crimson;
     font-weight: 500;
 }
+
+    .lip-item  a{
+		color: crimson;
+			text-decoration: none;
+    }
+	
+		.lip-item  a:hover{
+		color: crimson;
+			text-decoration: underline;
+    }
 
 /* Vitamin C Section */
 .vitamin-c {
@@ -571,6 +578,15 @@ img {
         max-width: 180px;
     }
     
+	    .lip-item  a{
+		color: crimson;
+			text-decoration: none;
+    }
+	
+		.lip-item  a:hover{
+		color: crimson;
+			text-decoration: underline;
+    }
     .hero-text h2 {
         font-size: 1.3em;
     }
